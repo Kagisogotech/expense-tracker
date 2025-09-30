@@ -30,7 +30,7 @@ const InitialBalance: React.FC<InitialBalanceProps> = ({ initialBalance, onSetIn
 
     return (
         <div className="bg-neutral-800/50 backdrop-blur-sm border border-neutral-700 p-6 rounded-2xl">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                 <h2 className="text-lg font-semibold text-neutral-400 uppercase tracking-wider">Starting Balance</h2>
                 {isEditing ? (
                     <div className="flex items-center gap-2">
@@ -39,7 +39,7 @@ const InitialBalance: React.FC<InitialBalanceProps> = ({ initialBalance, onSetIn
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             onKeyDown={(e) => e.key === 'Enter' && handleSave()}
-                            className="w-40 px-3 py-2 bg-neutral-700 border border-neutral-600 rounded-md shadow-sm text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                            className="w-full sm:w-40 px-3 py-2 bg-neutral-700 border border-neutral-600 rounded-md shadow-sm text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             autoFocus
                             placeholder="Set starting balance"
                         />
@@ -48,8 +48,8 @@ const InitialBalance: React.FC<InitialBalanceProps> = ({ initialBalance, onSetIn
                         </button>
                     </div>
                 ) : (
-                    <div className="flex items-center gap-3">
-                        <p className="text-3xl font-bold text-neutral-100">{formatCurrency(initialBalance)}</p>
+                    <div className="flex items-center gap-3 self-end sm:self-center">
+                        <p className="text-2xl sm:text-3xl font-bold text-neutral-100">{formatCurrency(initialBalance)}</p>
                         <button onClick={() => setIsEditing(true)} className="p-1 text-neutral-400 hover:text-indigo-300 transition-all duration-300 hover:drop-shadow-[0_0_5px_rgba(129,140,248,0.5)]" aria-label="Edit starting balance">
                             <EditIcon />
                         </button>

@@ -43,16 +43,16 @@ const TransactionItem: React.FC<{ transaction: Transaction; onDelete: () => void
 
   return (
     <li className={`flex items-center justify-between p-3 bg-neutral-800 rounded-lg border-l-4 ${borderColor} my-2 transition-all duration-300 hover:bg-neutral-700/50 hover:-translate-y-1 hover:shadow-lg ${glowColor} group`}>
-      <div className="flex flex-col flex-1">
-        <span className="font-semibold text-neutral-100">{transaction.description}</span>
-        <div className="flex items-center gap-2 text-sm text-neutral-400 mt-1">
-          <span style={{ backgroundColor: categoryColor }} className="w-2.5 h-2.5 rounded-full inline-block" aria-hidden="true"></span>
+      <div className="flex flex-col flex-1 min-w-0 mr-2">
+        <span className="font-semibold text-neutral-100 truncate" title={transaction.description}>{transaction.description}</span>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-400 mt-1">
+          <span style={{ backgroundColor: categoryColor }} className="w-2.5 h-2.5 rounded-full inline-block flex-shrink-0" aria-hidden="true"></span>
           <span>{transaction.category}</span>
           <span className="text-neutral-500" aria-hidden="true">·</span>
           <span>{new Date(transaction.date).toLocaleDateString()}</span>
         </div>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2 sm:space-x-4">
         <span className={`font-bold ${amountColor}`}>{sign}{formatCurrency(transaction.amount)}</span>
         <button
           onClick={onDelete}

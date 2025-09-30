@@ -18,7 +18,7 @@ const CurrencySelector: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="w-24 md:w-auto">
       <label htmlFor="currency-select" className="sr-only">Select Currency</label>
       <select
         id="currency-select"

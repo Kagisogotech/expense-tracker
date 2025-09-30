@@ -95,11 +95,11 @@ const DownloadPDFButton: React.FC<DownloadPDFButtonProps> = ({
   return (
     <button
       onClick={generatePdf}
-      className="flex items-center gap-2 px-3 py-2 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:ring-indigo-500"
+      className="flex items-center justify-center gap-2 p-2 md:px-3 md:py-2 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:ring-indigo-500"
       aria-label="Download financial summary as PDF"
     >
       <DownloadIcon className="h-5 w-5" />
-      <span className="hidden sm:inline">Download PDF</span>
+      <span className="hidden md:inline">Download PDF</span>
     </button>
   );
 };

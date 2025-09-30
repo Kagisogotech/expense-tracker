@@ -46,9 +46,9 @@ const ExpenseChart: React.FC<ExpenseChartProps> = ({ transactions }) => {
           <Pie
             data={chartData}
             cx="50%"
-            cy="50%"
+            cy="45%"
             labelLine={false}
-            outerRadius={120}
+            outerRadius={110}
             fill="#8884d8"
             dataKey="value"
             nameKey="name"
